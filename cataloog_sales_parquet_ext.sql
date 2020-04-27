@@ -78,4 +78,4 @@ CREATE EXTERNAL TABLE tpcds.catalog_sales_parquet_readable_ext (
     cs_net_profit numeric(7,2)
 )
 LOCATION ('pxf://data/pxf_examples/catalog_sales.parquet?PROFILE=hdfs:parquet')
-FORMAT 'CUSTOM' (FORMATTER='pxfwritable_export');
+FORMAT 'CUSTOM' (FORMATTER='pxfwritable_import');
