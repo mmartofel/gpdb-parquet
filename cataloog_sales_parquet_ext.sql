@@ -1,4 +1,4 @@
-CREATE EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext;
+DROP EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext;
 
 CREATE WRITABLE EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext (
     cs_sold_date_sk integer,
@@ -39,7 +39,7 @@ CREATE WRITABLE EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext (
 LOCATION ('pxf://data/pxf_examples/catalog_sales.parquet?PROFILE=hdfs:parquet')
 FORMAT 'CUSTOM' (FORMATTER='pxfwritable_export');
 
-CREATE EXTERNAL TABLE tpcds.catalog_sales_parquet_readable_ext;
+DROP EXTERNAL TABLE tpcds.catalog_sales_parquet_readable_ext;
 
 CREATE EXTERNAL TABLE tpcds.catalog_sales_parquet_readable_ext (
     cs_sold_date_sk integer,
