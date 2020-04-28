@@ -11,7 +11,7 @@
 -- GRANT INSERT ON PROTOCOL pxf TO gpadmin;
 
 DROP EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext_:p1;
--- DROP TABLE tpcds.catalog_sales_parquet_writable_ext_:p1;
+DROP TABLE tpcds.catalog_sales_parquet_writable_ext_:p1;
 
 CREATE WRITABLE EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext_:p1 (
     cs_sold_date_sk integer,
@@ -53,7 +53,7 @@ LOCATION (:hdfs_location)
 FORMAT 'CUSTOM' (FORMATTER='pxfwritable_export');
 
 DROP EXTERNAL TABLE tpcds.catalog_sales_parquet_readable_ext_:p1;
--- DROP TABLE tpcds.catalog_sales_parquet_readable_ext_:p1;
+DROP TABLE tpcds.catalog_sales_parquet_readable_ext_:p1;
 
 CREATE EXTERNAL TABLE tpcds.catalog_sales_parquet_readable_ext_:p1 (
     cs_sold_date_sk integer,
