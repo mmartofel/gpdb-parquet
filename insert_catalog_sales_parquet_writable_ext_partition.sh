@@ -1,0 +1,10 @@
+psql -v p1=2 -f insert_catalog_sales_parquet_writable_ext_partition.sql
+psql -v p1=3 -f insert_catalog_sales_parquet_writable_ext_partition.sql
+psql -v p1=4 -f insert_catalog_sales_parquet_writable_ext_partition.sql
+psql -v p1=5 -f insert_catalog_sales_parquet_writable_ext_partition.sql
+psql -v p1=6 -f insert_catalog_sales_parquet_writable_ext_partition.sql
+psql -v p1=7 -f insert_catalog_sales_parquet_writable_ext_partition.sql
+psql -v p1=8 -f insert_catalog_sales_parquet_writable_ext_partition.sql
+psql -v p1=9 -f insert_catalog_sales_parquet_writable_ext_partition.sql
+psql -v p1=10 -f insert_catalog_sales_parquet_writable_ext_partition.sql
+psql -v p1=11 -f insert_catalog_sales_parquet_writable_ext_partition.sql
