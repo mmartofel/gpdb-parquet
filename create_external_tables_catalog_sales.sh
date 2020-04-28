@@ -1,0 +1,10 @@
+psql -v p1=2 -f catalog_sales_parquet_ext.sql
+psql -v p1=3 -f catalog_sales_parquet_ext.sql
+psql -v p1=4 -f catalog_sales_parquet_ext.sql
+psql -v p1=5 -f catalog_sales_parquet_ext.sql
+psql -v p1=6 -f catalog_sales_parquet_ext.sql
+psql -v p1=7 -f catalog_sales_parquet_ext.sql
+psql -v p1=8 -f catalog_sales_parquet_ext.sql
+psql -v p1=9 -f catalog_sales_parquet_ext.sql
+psql -v p1=10 -f catalog_sales_parquet_ext.sql
+psql -v p1=11 -f catalog_sales_parquet_ext.sql
