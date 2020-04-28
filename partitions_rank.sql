@@ -1,4 +1,4 @@
-SELECT partitiontablename, partitionrank
+SELECT schemaname, tablename, partitiontablename, partitionrank
 FROM   pg_partitions
-WHERE  partitiontablename like 'catalog_sales_hybrid%'
-ORDER BY 2;
+WHERE  tablename='catalog_sales_hybrid'
+ORDER BY 4;
