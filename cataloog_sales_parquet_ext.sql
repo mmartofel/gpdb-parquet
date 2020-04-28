@@ -1,6 +1,6 @@
-DROP EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext;
+DROP EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext_:p1;
 
-CREATE WRITABLE EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext (
+CREATE WRITABLE EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext_:p1 (
     cs_sold_date_sk integer,
     cs_sold_time_sk integer,
     cs_ship_date_sk integer,
@@ -36,7 +36,7 @@ CREATE WRITABLE EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext (
     cs_net_paid_inc_ship_tax numeric(7,2),
     cs_net_profit numeric(7,2)
 )
-LOCATION ('pxf://data/pxf_examples/catalog_sales.parquet?PROFILE=hdfs:parquet')
+LOCATION ('pxf://data/catalog_sales.parquet/partition_:p1?PROFILE=hdfs:parquet')
 FORMAT 'CUSTOM' (FORMATTER='pxfwritable_export');
 
 DROP EXTERNAL TABLE tpcds.catalog_sales_parquet_readable_ext;
@@ -77,5 +77,5 @@ CREATE EXTERNAL TABLE tpcds.catalog_sales_parquet_readable_ext (
     cs_net_paid_inc_ship_tax numeric(7,2),
     cs_net_profit numeric(7,2)
 )
-LOCATION ('pxf://data/pxf_examples/catalog_sales.parquet?PROFILE=hdfs:parquet')
+LOCATION ('pxf://data/catalog_sales.parquet/partition_:p1?PROFILE=hdfs:parquet')
 FORMAT 'CUSTOM' (FORMATTER='pxfwritable_import');
