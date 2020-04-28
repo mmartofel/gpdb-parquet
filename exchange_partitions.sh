@@ -1,10 +1,1 @@
-psql -v p1=2 -f exchange_partitions.sql
-psql -v p1=3 -f exchange_partitions.sql
-psql -v p1=4 -f exchange_partitions.sql
-psql -v p1=5 -f exchange_partitions.sql
-psql -v p1=6 -f exchange_partitions.sql
-psql -v p1=7 -f exchange_partitions.sql
-psql -v p1=8 -f exchange_partitions.sql
-psql -v p1=9 -f exchange_partitions.sql
-psql -v p1=10 -f exchange_partitions.sql
-psql -v p1=11 -f exchange_partitions.sql
+psql -f exchange_partitions.sql
