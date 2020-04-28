@@ -41,7 +41,7 @@ CREATE WRITABLE EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext_:p1 (
     cs_net_paid_inc_ship_tax numeric(7,2),
     cs_net_profit numeric(7,2)
 )
-LOCATION ('pxf://data/catalog_sales.parquet/partition_:p1?PROFILE=hdfs:parquet')
+LOCATION ('pxf://data/catalog_sales.parquet/partition_':p1'?PROFILE=hdfs:parquet')
 FORMAT 'CUSTOM' (FORMATTER='pxfwritable_export');
 
 DROP EXTERNAL TABLE tpcds.catalog_sales_parquet_readable_ext_:p1;
