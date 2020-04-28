@@ -4,7 +4,7 @@ psql < catalog_sales_hybrid.sql
 echo "Create readable and writable external table to store PARQUET data"
 ./create_external_tables_catalog_sales.sh
 
-echo "Delete old files from HDFS (/data/catalog_sales.parquet) if they exist"
+echo "Delete old files from HDFS directory /data/catalog_sales.parquet if they exist"
 ssh cluster-verint-m hdfs dfs -rm -r /data/catalog_sales.parquet
 
 echo "Unload data to HDFS writing to EXTERNAL WRITABLE tables"
