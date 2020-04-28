@@ -1,4 +1,4 @@
-echo "Recreate CATALOG_SALES_HYBRID table at TPCDS schem""
+echo "Recreate CATALOG_SALES_HYBRID table at TPCDS schema"
 psql < catalog_sales_hybrid.sql
 
 echo "Create readable and writable external table to store PARQUET data"
