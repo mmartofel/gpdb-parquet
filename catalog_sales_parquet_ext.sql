@@ -3,6 +3,8 @@
 -- psql -v p1=2 -f catalog_sales_parquet_ext.sql
 -- p1 parameter is a partition number you want to add at the end of table name
 
+\set hdfs_location '\'' pxf://data/catalog_sales.parquet/partition_':p1'?PROFILE=hdfs:parquet') '\''
+
 DROP EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext_:p1;
 
 CREATE WRITABLE EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext_:p1 (
@@ -41,7 +43,7 @@ CREATE WRITABLE EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext_:p1 (
     cs_net_paid_inc_ship_tax numeric(7,2),
     cs_net_profit numeric(7,2)
 )
-LOCATION ('pxf://data/catalog_sales.parquet/partition_':p1'?PROFILE=hdfs:parquet')
+LOCATION (:hdfs_location)
 FORMAT 'CUSTOM' (FORMATTER='pxfwritable_export');
 
 DROP EXTERNAL TABLE tpcds.catalog_sales_parquet_readable_ext_:p1;
