@@ -6,8 +6,12 @@
 \set hdfs_location '\'' 'pxf://data/catalog_sales.parquet/partition_':p1'?PROFILE=hdfs:parquet' '\''
 \echo :hdfs_location
 
+-- CREATE EXTENSION pxf;
+-- GRANT SELECT ON PROTOCOL pxf TO gpadmin;
+-- GRANT INSERT ON PROTOCOL pxf TO gpadmin;
+
 DROP EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext_:p1;
-DROP TABLE tpcds.catalog_sales_parquet_writable_ext_:p1;
+-- DROP TABLE tpcds.catalog_sales_parquet_writable_ext_:p1;
 
 CREATE WRITABLE EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext_:p1 (
     cs_sold_date_sk integer,
@@ -49,7 +53,7 @@ LOCATION (:hdfs_location)
 FORMAT 'CUSTOM' (FORMATTER='pxfwritable_export');
 
 DROP EXTERNAL TABLE tpcds.catalog_sales_parquet_readable_ext_:p1;
-DROP TABLE tpcds.catalog_sales_parquet_readable_ext_:p1;
+-- DROP TABLE tpcds.catalog_sales_parquet_readable_ext_:p1;
 
 CREATE EXTERNAL TABLE tpcds.catalog_sales_parquet_readable_ext_:p1 (
     cs_sold_date_sk integer,
