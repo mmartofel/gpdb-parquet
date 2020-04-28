@@ -3,7 +3,8 @@
 -- psql -v p1=2 -f catalog_sales_parquet_ext.sql
 -- p1 parameter is a partition number you want to add at the end of table name
 
-\set hdfs_location '\'' pxf://data/catalog_sales.parquet/partition_||:p1||?PROFILE=hdfs:parquet '\''
+-- \set hdfs_location '\'' pxf://data/catalog_sales.parquet/partition_||:p1||?PROFILE=hdfs:parquet '\''
+\set hdfs_location 'pxf://data/catalog_sales.parquet/partition_':p1'?PROFILE=hdfs:parquet'
 \echo :hdfs_location
 
 DROP EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext_:p1;
