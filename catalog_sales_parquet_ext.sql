@@ -1,6 +1,6 @@
 -- Generate EXTERNAL tables for catalog_sales.
 -- use command:
--- psql -v p1=2 -f cataloog_sales_parquet_ext.sql
+-- psql -v p1=2 -f catalog_sales_parquet_ext.sql
 -- p1 parameter is a partition number you want to add at the end of table name
 
 DROP EXTERNAL TABLE tpcds.catalog_sales_parquet_writable_ext_:p1;
