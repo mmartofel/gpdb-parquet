@@ -16,3 +16,5 @@ echo "Exchange oldest 10 partitions at CATALOG_SALES_HYBRID table with external 
 echo "Check exchanged partitions"
 psql < partitions_rank.sql
 
+echo "Check the plan to see External Scans"
+psql -c "explain select count(*) from catalog_sales_hybrid"
