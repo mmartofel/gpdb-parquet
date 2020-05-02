@@ -1,3 +1,1 @@
-# webapp
-# webapp
-# webapp
+Greenplum PXF access for Parquet data at HDFS
