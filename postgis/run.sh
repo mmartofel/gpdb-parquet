@@ -18,3 +18,7 @@ psql -d $DBNAME -f ./nyc_census_sociodata.sql
 psql -d $DBNAME -f ./nyc_neighborhoods.sql
 psql -d $DBNAME -f ./nyc_streets.sql
 psql -d $DBNAME -f ./nyc_subway_stations.sql
+
+# Create partitioned and hybrid (consisting external patitions) tables
+psql -d $DBNAME -f ./nyc_census_blocks_partitioned.sql
+psql -d $DBNAME -f ./nyc_census_blocks_hybrid.sql
