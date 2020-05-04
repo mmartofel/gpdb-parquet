@@ -25,6 +25,8 @@ SELECT AddGeometryColumn('public','nyc_census_blocks_partitioned','geom','26918'
 
 COMMIT;
 
+INSERT INTO public.nyc_census_blocks_partitioned select * from public.nyc_census_blocks;
+
 CREATE INDEX nyc_census_blocks_partitioned_gist ON public.nyc_census_blocks_partitioned USING GIST (geom);
 
 ANALYZE public.nyc_census_blocks_partitioned;
