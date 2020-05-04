@@ -19,6 +19,12 @@ PARTITION BY LIST (boroname)
   PARTITION staten_sland VALUES ('Staten Island'),
   DEFAULT PARTITION other );
 
-ALTER TABLE public.nyc_census_blocks_partitioned ADD PRIMARY KEY (gid);
+ALTER TABLE public.nyc_census_blocks_partitioned ADD PRIMARY KEY (gid,boroname);
 
 SELECT AddGeometryColumn('public','nyc_census_blocks_partitioned','geom','26918','MULTIPOLYGON',2);
+
+COMMIT;
+
+CREATE INDEX nyc_census_blocks_partitioned_gist ON public.nyc_census_blocks_partitioned USING GIST (geom);
+
+ANALYZE public.nyc_census_blocks_partitioned;
