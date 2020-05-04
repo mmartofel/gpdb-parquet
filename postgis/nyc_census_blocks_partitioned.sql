@@ -16,7 +16,7 @@ PARTITION BY LIST (boroname)
   PARTITION queens VALUES ('Queens'),
   PARTITION manhattan VALUES ('Manhattan'),
   PARTITION brooklyn VALUES ('Brooklyn'),
-  PARTITION staten_sland VALUES ('Staten Island'),
+  PARTITION staten_island VALUES ('Staten Island'),
   DEFAULT PARTITION other );
 
 ALTER TABLE public.nyc_census_blocks_partitioned ADD PRIMARY KEY (gid,boroname);
