@@ -35,6 +35,6 @@ CREATE EXTERNAL TABLE public.nyc_census_blocks_bronx_readable_parquet
  geom       geometry(MultiPolygon,26918)
 )
    LOCATION ('pxf://data/nyc_census_blocks/nyc_census_blocks_bronx.parquet?PROFILE=hdfs:parquet')
-FORMAT 'CUSTOM' (FORMATTER='pxfreadable_export');
+FORMAT 'CUSTOM' (FORMATTER='pxfwritable_import');
 
 SELECT count(*) from public.nyc_census_blocks_bronx_readable_parquet;
