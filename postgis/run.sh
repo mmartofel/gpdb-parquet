@@ -4,6 +4,11 @@ DBNAME=nyc
 dropdb $DBNAME
 createdb $DBNAME
 
+# Create PXF protocol at the desired database
+psql -d $DBNAME -c 'CREATE EXTENSION pxf'
+psql -d $DBNAME -c 'GRANT SELECT ON PROTOCOL pxf TO gpadmin'
+psql -d $DBNAME -c 'GRANT INSERT ON PROTOCOL pxf TO gpadmin'
+
 # Enable PostGIS at the database
 psql -d $DBNAME -f /usr/local/greenplum-db/share/postgresql/contrib/postgis-2.1/install/postgis.sql
 psql -d $DBNAME -f /usr/local/greenplum-db/share/postgresql/contrib/postgis-2.1/install/spatial_ref_sys.sql
